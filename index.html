@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nestor Urban | International Business</title>
+    <title>Nestor Urban | Portafolio Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -27,9 +27,43 @@
         }
         .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
         .logo span { color: #bbb; }
-        .nav-links { list-style: none; display: flex; }
-        .nav-links li a { color: #ddd; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; font-size: 0.9rem;}
-        .nav-links li a:hover { color: var(--white); border-bottom: 1px solid var(--white); }
+        
+        .nav-links { list-style: none; display: flex; align-items: center; }
+        .nav-links li { position: relative; } /* Necesario para el dropdown */
+        .nav-links li a { color: #ddd; text-decoration: none; margin-left: 20px; font-weight: 500; transition: 0.3s; font-size: 0.9rem; padding: 10px; display: block;}
+        .nav-links li a:hover { color: var(--white); }
+
+        /* ESTILOS DEL MENÚ DESPLEGABLE (CONTACTO) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+            border-radius: 4px;
+            top: 100%; /* Aparece justo debajo */
+        }
+
+        .dropdown-content a {
+            color: var(--text-dark) !important; /* Texto oscuro dentro del blanco */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #eee;
+            margin-left: 0 !important; /* Resetea margen del nav */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            color: var(--primary) !important;
+        }
+
+        /* Mostrar el menú al pasar el mouse */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
         /* HERO */
         .hero {
@@ -102,7 +136,7 @@
         }
         .gallery-item:hover .overlay { transform: translateY(0); }
 
-        /* MODALES (POP-UPS) */
+        /* MODALES */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); overflow-y: auto; }
         .modal-content {
             background: #fff; margin: 5vh auto; width: 90%; max-width: 800px; display: flex; flex-direction: column;
@@ -134,6 +168,9 @@
             .nav-links.active { display: flex; }
             .profile-grid, .section-split { grid-template-columns: 1fr; }
             .menu-toggle { display: block; }
+            /* Ajuste para dropdown en móvil */
+            .dropdown:hover .dropdown-content { position: relative; box-shadow: none; background: #222; width: 100%; }
+            .dropdown-content a { color: #fff !important; border-bottom: 1px solid #444; }
         }
     </style>
 </head>
@@ -148,6 +185,13 @@
             <li><a href="#referencias">Referencias</a></li> 
             <li><a href="#proyectos">Portafolio</a></li>
             <li><a href="#cv-section">CV</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Contacto <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="https://wa.me/5215610657532" target="_blank"><i class="fab fa-whatsapp"></i> 561 065 7532</a>
+                    <a href="https://www.instagram.com/wtf.xntx/?igsh=MTRkamM4b2UzdmFvOQ%3D%3D#" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+            </li>
         </ul>
         <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     </nav>
@@ -155,7 +199,7 @@
     <header id="inicio" class="hero">
         <div class="hero-content">
             <h1>Portafolio Profesional</h1>
-            <p>Nestor Josafath Antonio Urban | International Business</p>
+            <p>Nestor Josafath Antonio Urban | Negocios Internacionales</p>
             <a href="#proyectos" class="btn-primary">Ver Evidencias</a>
         </div>
     </header>
@@ -214,7 +258,7 @@
                 <h3 style="margin-top: 20px;"><i class="fas fa-language"></i> Idiomas</h3>
                 <ul class="list-check">
                     <li><strong>Español:</strong> Nativo.</li>
-                    <li><strong>Inglés:</strong> Basico.</li>
+                    <li><strong>Inglés:</strong> Intermedio/Avanzado (Business Level).</li>
                 </ul>
             </div>
         </section>
@@ -300,7 +344,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Nestor Urban. Blog Académico de Negocios Internacionales.</p>
+        <p>&copy; 2025 Nestor Urban. Portafolio Profesional.</p>
     </footer>
 
     <div id="modal1" class="modal">
@@ -399,7 +443,3 @@
     </script>
 </body>
 </html>
-
-
-
-
